@@ -10,6 +10,36 @@ public class Test {
         Sensore s4 = new Sensore("192.168.100.50", new Coordinate(46.1,35.9), new GregorianCalendar(2023, GregorianCalendar.MAY, 23));
         Sensore s5 = new Sensore("192.168.100.60", new Coordinate(45.1,36.7), new GregorianCalendar(2025, GregorianCalendar.MARCH, 28));
 
+        if (registro.aggiungiSensore(s1)) {
+            System.out.println("Sensore aggiunto correttamente: " + s1.getIP());
+        } else {
+            System.out.println("Impossibile aggiungere il sensore: " +s1.getIP());
+        }
+
+        if (registro.aggiungiSensore(s1)) {
+            System.out.println("Sensore aggiunto correttamente: " + s2.getIP());
+        } else {
+            System.out.println("Impossibile aggiungere il sensore: " +s2.getIP());
+        }
+
+        if (registro.aggiungiSensore(s1)) {
+            System.out.println("Sensore aggiunto correttamente: " + s3.getIP());
+        } else {
+            System.out.println("Impossibile aggiungere il sensore: " +s3.getIP());
+        }
+
+        if (registro.aggiungiSensore(s1)) {
+            System.out.println("Sensore aggiunto correttamente: " + s4.getIP());
+        } else {
+            System.out.println("Impossibile aggiungere il sensore: " +s4.getIP());
+        }
+
+        if (registro.aggiungiSensore(s1)) {
+            System.out.println("Sensore aggiunto correttamente: " + s5.getIP());
+        } else {
+            System.out.println("Impossibile aggiungere il sensore: " +s5.getIP());
+        }
+
         registro.aggiungiSensore(s1);
         registro.aggiungiSensore(s2);
         registro.aggiungiSensore(s3);
@@ -20,14 +50,21 @@ public class Test {
         System.out.println(Arrays.toString(registro.batterieScadute()));
 
         System.out.println("Cerca i sensori in un'area");
-        System.out.println(Arrays.toString(registro.cercaArea(45.7, 37.5, 45.0, 36.5 )));
+        Sensore[] sensoriInArea = (registro.cercaArea(45.7, 37.5, 45.0, 36.5 ));
+        for (Sensore s : sensoriInArea) {
+            System.out.println(s);
+        }
 
         System.out.println("Cerca in base all'ip");
-        System.out.println(registro.cercaIP("192.168.100.20"));
+        System.out.println(registro.cercaIP("192.168.100.50"));
+
 
         System.out.println("Sensore eliminato");
-        registro.eliminaSensore("192.169.100.50");
-        System.out.println(registro.cercaIP("192.168.100.50"));
+        if (registro.eliminaSensore("192.169.100.50") == true) {
+            System.out.println("Il sensore è stato eliminato");
+        } else {
+            System.out.println("Impossibile eliminare il sensore");
+        }
 
 
     }

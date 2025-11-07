@@ -35,7 +35,7 @@ public class Sensore {
     }
 
     public String toString() {
-        return "Sensore[" + ip + ", coordinate =" + coordinate + "]";
+        return "Sensore[" + ip + ", coordinate: " + coordinate + "]";
     }
 }
 

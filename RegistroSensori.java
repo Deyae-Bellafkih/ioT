@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class RegistroSensori {
     private Sensore[] sensori;
     private int size;
@@ -7,11 +9,12 @@ public class RegistroSensori {
         size = 0;
     }
 
-    public void aggiungiSensore(Sensore s) {
+    public boolean aggiungiSensore(Sensore s) {
         if (size < sensori.length) {
             sensori[size++] = s;
+            return true;
         } else {
-            System.out.println("Impossibile aggiungere un sensore");
+            return false;
         }
     }
 
@@ -45,7 +48,7 @@ public class RegistroSensori {
                 identificati[count++] = s;
             }
         }
-        return identificati;
+        return Arrays.copyOf(identificati, count);
     }
 
     public Sensore[] batterieScadute() {
@@ -56,7 +59,7 @@ public class RegistroSensori {
                 identificati[count++] = sensori[i];
             }
         }
-        return identificati;
+        return Arrays.copyOf(identificati, count);
     }
 }
 
