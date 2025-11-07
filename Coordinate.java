@@ -15,4 +15,8 @@ public class Coordinate {
     public double getLongitudine() {
         return longitudine;
     }
+
+    public String toString() {
+        return "Latitudine =" + latitudine + ", longitudine =" + longitudine;
+    }
 }

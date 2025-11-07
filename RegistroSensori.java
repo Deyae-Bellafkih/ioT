@@ -41,7 +41,7 @@ public class RegistroSensori {
         int count = 0;
         for (int i = 0; i < size; i++) {
             Sensore s = sensori[i];
-            if (s.getLatitudine() >= latitudineMin && s.getLatitudine() <= latitudineMax && s.getLongitudine() >= longitudineMin && s.getLongitudine() <= longitudineMax) {
+            if (s.getCoordinate().getLatitudine() >= latitudineMin && s.getCoordinate().getLatitudine() <= latitudineMax && s.getCoordinate().getLongitudine() >= longitudineMin && s.getCoordinate().getLongitudine() <= longitudineMax) {
                 identificati[count++] = s;
             }
         }
