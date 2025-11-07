@@ -48,7 +48,7 @@ public class RegistroSensori {
                 identificati[count++] = s;
             }
         }
-        return Arrays.copyOf(identificati, count);
+        return identificati;
     }
 
     public Sensore[] batterieScadute() {
@@ -59,7 +59,7 @@ public class RegistroSensori {
                 identificati[count++] = sensori[i];
             }
         }
-        return Arrays.copyOf(identificati, count);
+        return identificati;
     }
 }
 
