@@ -16,15 +16,14 @@ public class Test {
         registro.aggiungiSensore(s4);
         registro.aggiungiSensore(s5);
 
-
-        System.out.println("Cerca in base all'ip");
-        System.out.println(registro.cercaIP("192.168.100.20"));
+        System.out.println("Ecco i sensori con la batteria scaduta");
+        System.out.println(Arrays.toString(registro.batterieScadute()));
 
         System.out.println("Cerca i sensori in un'area");
         System.out.println(Arrays.toString(registro.cercaArea(45.7, 37.5, 45.0, 36.5 )));
 
-        System.out.println("Ecco i sensori con la batteria scaduta");
-        System.out.println(Arrays.toString(registro.batterieScadute()));
+        System.out.println("Cerca in base all'ip");
+        System.out.println(registro.cercaIP("192.168.100.20"));
 
         System.out.println("Sensore eliminato");
         registro.eliminaSensore("192.169.100.50");
