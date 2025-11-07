@@ -3,14 +3,12 @@ import java.util.Calendar;
 public class Sensore {
 
     private String ip;
-    private double latitudine;
-    private double longitudine;
+    private Coordinate coordinate;
     private Calendar dataUltimaSostituzione;
 
-    public Sensore(String ip, double latitudine, double longitudine, Calendar dataUltimaSostituzione) {
+    public Sensore(String ip, Coordinate coordinate, Calendar dataUltimaSostituzione) {
         this.ip = ip;
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
+        this.coordinate = coordinate;
         this.dataUltimaSostituzione = dataUltimaSostituzione;
     }
 
@@ -18,12 +16,8 @@ public class Sensore {
         return ip;
     }
 
-    public double getLatitudine() {
-        return latitudine;
-    }
-
-    public double getLongitudine() {
-        return longitudine;
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
 
     public Calendar getDataUltimaSostituzione() {
@@ -41,7 +35,7 @@ public class Sensore {
     }
 
     public String toString() {
-        return "Sensore[" + ip + ", latitudine =" + latitudine + ", longitudine =" + longitudine + "]";
+        return "Sensore[" + ip + ", coordinate =" + coordinate + "]";
     }
 }
 
